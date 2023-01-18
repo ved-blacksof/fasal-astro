@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <main>
+    <section class="section1"></section>
+    <section class="section2">
+      <div class="flex content-card">
+        <div class="content-inner">
+          <div class="content">asda</div>
+          <div class="content">asda</div>
+          <div class="content">asda</div>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="rotation"></div>
+      </div>
+    </section>
+    <section class="section"></section>
+    <section class="section"></section>
+    <section class="section"></section>
+  </main>
+</Layout>
+
+<style>
+  .section2 {
+    display: flex;
+    justify-content: space-between;
+    background: #000;
+  }
+  .section2 div {
+    border: 2px solid white;
+    width: 50%;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .rotation {
+    width: 300px;
+    height: 300px;
+    border: 3px solid blue !important;
+  }
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60%;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+  }
+  section {
+    height: 100vh;
+  }
+  section:nth-child(even) {
+    background: #000;
+  }
+  section:nth-child(odd) {
+    background: #fefefe;
+  }
+</style>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".section2",
+      start: "top top",
+      end: "+=500% ",
+      markers: true,
+      scrub: 2,
+      pin: true,
+    },
+  });
+
+  function chngebg() {
+    tl.fromTo(
+      ".section2",
+      { background: "gray" },
+      { background: "green" }
+    ).fromTo(".rotation", { rotate: "0deg" }, { rotate: "360deg" }, "<");
+  }
+  //Position
+
+  let panels = gsap.utils.toArray(".content-card");
+  console.log(panels);
+
+  chngebg();
+  //   rotatediv();
+</script>

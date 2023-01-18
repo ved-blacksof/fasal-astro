@@ -1,0 +1,121 @@
+.black-gradient {
+  background: transparent
+    linear-gradient(185deg, #000000 0%, #0000008c 53%, #000000 100%) 0% 0%
+    no-repeat padding-box;
+}
+
+#circular-line {
+  animation: rotate 40s alternate linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#fasal-fresh {
+  transition: all 0.3s ease;
+}
+#fasal-fresh-wrapper text {
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+#fasal-fresh-wrapper:hover #fasal-fresh {
+  opacity: 0;
+  height: 0px;
+}
+
+#fasal-fresh-wrapper:hover text {
+  opacity: 1;
+}
+
+/* fasal system */
+
+#fasal-system {
+  transition: all 0.3s ease;
+}
+#fasal-system-wrapper text {
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+#fasal-system-wrapper:hover #fasal-system {
+  opacity: 0;
+  height: 0px;
+}
+
+#fasal-system-wrapper:hover text {
+  opacity: 1;
+}
+
+/* fasal connect */
+
+#fasal-connect {
+  transition: all 0.3s ease;
+}
+#fasal-connect-wrapper text {
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+#fasal-connect-wrapper:hover #fasal-connect {
+  opacity: 0;
+  height: 0px;
+}
+
+#fasal-connect-wrapper:hover text {
+  opacity: 1;
+}
+
+/* Infiniter carousel */
+
+.slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.slider::before,
+::after {
+  content: "";
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 2;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 14);
+}
+
+.slide {
+  height: fit-content;
+  width: 250px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 7));
+  }
+}

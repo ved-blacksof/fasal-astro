@@ -1,0 +1,138 @@
+---
+import Menu from "./menu.astro";
+import "./style.css";
+---
+
+<nav
+  class="navbar-wrapper transition-all duration-300 fixed top-0 left-0 right-0 z-20 md:py-8 py-4"
+>
+  <div class="contain">
+    <div class="flex items-center justify-between mx-auto">
+      <div class="md:h-[73px] h-16 z-50">
+        <img class="h-full w-full" src="/globals/logo.svg" alt="Fasal" />
+      </div>
+      <div class="md:flex hidden">
+        <div class="dropdown relative">
+          <a class="bs-link px-2 md:px-8 p text-white" href="/for-businesses">
+            For businesses
+          </a>
+          <div
+            class="menu p-4 bg-mint rounded absolute w-[30rem] top-full -left-[10%]"
+          >
+            <div class="flex justify-between">
+              <div class="flex-1 pt-4 pr-5">
+                <a class="font-bold cursor-pointer hover:text-green transition">
+                  Fasal Fresh circle
+                </a>
+                <h6 class="text-[12px] opacity-70 mb-4">
+                  A Fresh approach to procurement business
+                </h6>
+                <a class="font-bold cursor-pointer hover:text-green transition">
+                  Fasal Fresh circle
+                </a>
+                <h6 class="text-[12px] opacity-70 mb-4">
+                  A Fresh approach to procurement business
+                </h6>
+                <a class="font-bold cursor-pointer hover:text-green transition">
+                  Fasal Fresh circle
+                </a>
+                <h6 class="text-[12px] opacity-70">
+                  A Fresh approach to procurement business
+                </h6>
+              </div>
+              <div class="flex-1 h-full w-full rounded-md">
+                <img
+                  class="h-full w-full object-cover"
+                  src="/globals/for-business-nav-dropdown.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown relative">
+          <a class="bs-link px-2 md:px-8 p text-white" href="/for-businesses">
+            For Farmers
+          </a>
+          <div
+            class="menu p-4 bg-mint rounded absolute w-[30rem] top-full -left-[10%]"
+          >
+            <div class="flex justify-between">
+              <div class="flex-1 pt-4 pr-5">
+                <a class="font-bold cursor-pointer hover:text-green transition">
+                  Fasal Fresh circle
+                </a>
+                <h6 class="text-[12px] opacity-70 mb-4">
+                  A Fresh approach to procurement business
+                </h6>
+                <a class="font-bold cursor-pointer hover:text-green transition">
+                  Fasal Fresh circle
+                </a>
+                <h6 class="text-[12px] opacity-70 mb-4">
+                  A Fresh approach to procurement business
+                </h6>
+                <a class="font-bold cursor-pointer hover:text-green transition">
+                  Fasal Fresh circle
+                </a>
+                <h6 class="text-[12px] opacity-70">
+                  A Fresh approach to procurement business
+                </h6>
+              </div>
+              <div class="flex-1 h-full w-full rounded-md">
+                <img
+                  class="h-full w-full object-cover"
+                  src="/globals/for-business-nav-dropdown.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        {
+          /* <div>
+            <a
+              class="fm-link px-2 md:px-8 p text-white"
+              href="/for-farmers"
+            >
+              For farmers
+            </a>
+            <div class="absolute top-0 left-0">asdasd</div>
+          </div> */
+        }
+      </div>
+
+      <button class="navbar-btn openMenuBtn w-8 md:w-10">
+        <svg
+          viewBox="0 0 24 24"
+          fill="white"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="style=linear">
+            <g id="menu-fries">
+              <path
+                id="vector"
+                d="M3 6H21"
+                stroke="#ffffff"
+                stroke-width="1.5"
+                stroke-linecap="round"></path>
+              <path
+                id="vector_2"
+                d="M9 12L21 12"
+                stroke="#ffffff"
+                stroke-width="1.5"
+                stroke-linecap="round"></path>
+              <path
+                id="vector_3"
+                d="M3 18H21"
+                stroke="#ffffff"
+                stroke-width="1.5"
+                stroke-linecap="round"></path>
+            </g>
+          </g>
+        </svg>
+      </button>
+    </div>
+
+    <Menu />
+  </div>
+</nav>

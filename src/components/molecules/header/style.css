@@ -1,0 +1,41 @@
+.showMenu {
+  transform: translateX(0%) !important;
+  opacity: 1 !important;
+}
+
+.bg-nav-style {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  padding: 14px 0 !important;
+}
+
+.mobile-menu a {
+  display: block;
+  color: white;
+}
+
+/* accordion */
+
+.panel {
+  transition: all 0.3s ease;
+  flex-direction: column;
+}
+.panel a {
+  transition: all 0.3s ease;
+  display: block;
+  opacity: 0.8;
+  padding: 10px 10px;
+}
+.show-panel {
+  height: 150px !important;
+}
+
+.dropdown .menu {
+  opacity: 0;
+  display: none;
+  transition: all 0.4s ease;
+}
+.dropdown:hover .menu {
+  opacity: 1;
+  display: block;
+}

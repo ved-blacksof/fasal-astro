@@ -1,0 +1,124 @@
+---
+import Header from "@molecules/header/index.astro";
+// import Footer from "@modules/footer";
+
+export interface Props {
+  title: string;
+  desc: string;
+  ogImage?: string;
+  lang?: string;
+}
+const { title, desc, ogImage = "", lang = "en" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
+
+    <title>{title}</title>
+
+    <meta content={title} name="title" />
+    <meta content="https://fasal.co/favicon.ico" name="icon" />
+    <meta content={desc} name="description" />
+    <meta content="#000000" name="theme-color" />
+    <meta content="light" name="color-scheme" />
+    <!--  to be included once the website is live -->
+    <!-- <meta content="Fasal" name="keywords" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="@FasalOfficial" name="twitter:site" />
+    <meta content="@FasalOfficial" name="twitter:creator" />
+    <meta content="Fasal - Grow More, Grow Better™" name="twitter:title" />
+    <meta
+      content="Fasal - Grow More, Grow Better™ is the most powerful farming app for horticulture."
+      name="twitter:description"
+    />
+    <meta content="https://fasal.co/images/logo.png" name="twitter:image" />
+    <meta content={title} property="og:title" />
+    <meta content="fasal.co website" property="og:type" />
+    <meta content="https://fasal.co" property="og:url" />
+    <meta content={title} property="og:site_name" />
+    <meta content="https://fasal.co/images/logo.png" property="og:image" />
+    <meta content={desc} property="og:description" />
+    <meta content="1670336447746" property="og:updated_time" />
+    <meta content="true" property="og:rich_attachment" />
+    <meta content="true" property="al:web:should_fallback" />
+    <meta content={title} property="al:iphone:app_name" /> -->
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <!-- <Footer /> -->
+  </body>
+
+  <script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    gsap.registerPlugin(ScrollTrigger);
+
+    const navWrapper = document.querySelector(
+      ".navbar-wrapper"
+    ) as HTMLDivElement;
+
+    document.addEventListener("scroll", () => {
+      const scroll = window.scrollY;
+      // fill after scroll
+      if (scroll > 150) navWrapper.classList.add("bg-nav-style");
+      if (scroll < 150) navWrapper.classList.remove("bg-nav-style");
+    });
+
+    // hide and show navbar using GSAP
+    const showAnim = gsap
+      .from(".navbar-wrapper", {
+        yPercent: -100,
+        paused: true,
+        duration: 0.3,
+        padding: "0px",
+      })
+      .progress(1);
+
+    ScrollTrigger.create({
+      trigger: ".navbar-wrapper",
+      start: "top top",
+      end: 99999,
+      onUpdate: (self) => {
+        self.direction === -1 ? showAnim.play() : showAnim.reverse();
+      },
+    });
+  </script>
+
+  <script>
+    const menuScr = document.querySelector(".menu-screen") as HTMLDivElement;
+
+    function toggleClass() {
+      menuScr.classList.toggle("showMenu");
+    }
+    (
+      document.querySelector(".openMenuBtn") as HTMLButtonElement
+    ).addEventListener("click", () => {
+      toggleClass();
+      disable();
+    });
+    (
+      document.querySelector(".closeMenuBtn") as HTMLButtonElement
+    ).addEventListener("click", () => {
+      toggleClass();
+    });
+
+    function preventScroll(e: any) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+
+    function disable() {
+      (
+        document.querySelector(".menu-screen") as HTMLDivElement
+      ).addEventListener("wheel", preventScroll);
+    }
+  </script>
+</html>

@@ -1,0 +1,6 @@
+.show-modal-screen {
+  display: block !important;
+}
+.hide-modal-screen {
+  display: none !important;
+}

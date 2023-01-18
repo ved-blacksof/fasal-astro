@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Hellix;
+  letter-spacing: 1px;
+}
+
+@font-face {
+  font-family: "Hellix";
+  src: url("/fonts/Hellix-Regular.woff2") format("woff2");
+  font-style: normal;
+}
+
+@layer utilities {
+  .contain {
+    @apply md:w-[84%] w-[95%] mx-auto;
+  }
+  .d {
+    @apply border-2 border-green;
+  }
+  .h1 {
+    @apply text-[34px] lg:text-[48px] xl:text-[58px];
+  }
+  .h2 {
+    @apply text-3xl lg:text-[42px] xl:text-[48px];
+  }
+  .h3 {
+    @apply text-2xl lg:text-[22px] xl:text-[34px] leading-snug;
+  }
+  .h4 {
+    @apply md:text-2xl lg:text-[22px] xl:text-[28px];
+  }
+  .h5 {
+    @apply text-[18px] xl:text-[22px];
+  }
+  .h6 {
+    @apply text-[16px] lg:text-[14px] xl:text-[16px];
+  }
+  .gradient {
+    background: transparent linear-gradient(226deg, #00613c 0%, #00140d 100%) 0%
+      0%;
+  }
+  .blade-padding {
+    @apply py-20 lg:py-[120px] xl:py-[180px];
+  }
+  .link {
+    @apply text-white hover:text-yellow transition-all duration-200;
+  }
+}

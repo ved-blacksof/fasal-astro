@@ -1,0 +1,109 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Home from "@templates/homepage/homepage.astro";
+import "swiper/css";
+import "../index.css";
+---
+
+<Layout
+  title="Home | Fasal - Grow More, Grow Better"
+  desc="Fasal- Grow More, Grow Better"
+>
+  <Home />
+</Layout>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const videoWrapper = document.querySelector(
+    ".fasal-video-wrapper"
+  ) as HTMLDivElement;
+  const openBtn = document.querySelector(
+    ".homepage-open-btn"
+  ) as HTMLButtonElement;
+  const closeBtn = document.querySelector(
+    ".homepage-close-btn"
+  ) as HTMLButtonElement;
+  const modal = document.querySelector(
+    ".full-screen-modal"
+  ) as HTMLButtonElement;
+
+  const accord1 = document.querySelector(".for-business") as HTMLButtonElement;
+  const accord2 = document.querySelector(".for-farmers") as HTMLButtonElement;
+  const panel1 = document.querySelector(".business-panel") as HTMLButtonElement;
+  const panel2 = document.querySelector(".farmers-panel") as HTMLButtonElement;
+  const arrow1 = document.querySelector(
+    ".for-business-arrow"
+  ) as HTMLButtonElement;
+  const arrow2 = document.querySelector(
+    ".for-farmers-arrow"
+  ) as HTMLButtonElement;
+
+  accord1.addEventListener("click", () => {
+    panel1.classList.toggle("show-panel");
+    arrow1.classList.toggle("-rotate-180");
+  });
+  accord2.addEventListener("click", () => {
+    panel2.classList.toggle("show-panel");
+    arrow2.classList.toggle("-rotate-180");
+  });
+
+  if (openBtn) {
+    openBtn.addEventListener("click", () => {
+      modal.classList.add("show-modal-screen");
+    });
+  }
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("show-modal-screen");
+    });
+  }
+
+  gsap.fromTo(
+    videoWrapper,
+    {
+      transformOrigin: "center",
+      scale: 0.84,
+    },
+    {
+      duration: 1,
+      scale: 1,
+      scrollTrigger: {
+        trigger: videoWrapper,
+        start: "10% 25%",
+        end: "50% 50%",
+        toggleActions: "restart resume",
+        scrub: 1,
+      },
+    }
+  );
+
+  // function scroller() {
+  //   gsap.to('.fasal-circular-wrapper', {
+  //     duration: 2,
+  //     scrollTrigger: {
+  //       trigger: '.fasal-circular-wrapper',
+  //       markers: true,
+  //       start: 'top top',
+  //       end: '+=1000s',
+  //       scrub: true
+  //     }
+  //   });
+  //   gsap.to('.fasal-circular-svg', {
+  //     duration: 2,
+  //     rotate: '360deg',
+  //     scrollTrigger: {
+  //       trigger: '.fasal-circular-wrapper',
+  //       pin: '.fasal-circular-wrapper',
+  //       markers: true,
+  //       start: 'top top',
+  //       end: 'bottom',
+  //       scrub: 1
+  //     }
+  //   });
+  // }
+
+  // scroller();
+</script>
