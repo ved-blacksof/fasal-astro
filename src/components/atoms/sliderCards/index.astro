@@ -1,0 +1,30 @@
+---
+const { light, title_1, title_2, stats, des } = Astro.props;
+---
+
+<div
+  class={`${
+    light ? "gradient" : "bg-mint"
+  } md:h-[35rem] h-[25rem] md:p-10 p-6 flex flex-col justify-between `}
+>
+  <h3
+    class={`${
+      light ? "text-white" : "text-black"
+    } h2 font-bold leading-tight md:leading-tight`}
+  >
+    {title_1}
+    <br />
+    <span class={`${light ? "text-yellow" : "text-green"}`}>
+      {title_2}
+    </span>
+  </h3>
+
+  <div>
+    <h3 class={`${light ? "text-white" : "text-black"} h1 font-bold`}>
+      {stats}
+    </h3>
+    <h3 class={`${light ? "text-white" : "text-black"} h5`}>{des}</h3>
+  </div>
+</div>
+
+<script></script>

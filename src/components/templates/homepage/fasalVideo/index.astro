@@ -2,16 +2,21 @@
 import "./style.css";
 ---
 
-<section>
+<section class="">
   <div class="mx-auto fasal-video-wrapper">
-    <div class="relative md:h-[90vh] h-[24rem] mx-auto">
-      <video
+    <div class="relative md:h-[100vh] h-[24rem] mx-auto">
+      <!-- <video
         class="w-full h-full object-cover"
-        src="/video/hero-section-intro.mp4"></video>
+        src="/video/hero-section-intro.mp4"></video> -->
+
+      <img
+        class="w-full h-full object-cover"
+        src="/home/thumbnail-precision-farming.jpg"
+      />
       <div
         class="h-full black-gradient bg-opacity-30 flex justify-center items-center absolute top-0 left-0 right-0 z-10"
       >
-        <div class="text-center max-w-xl md:mb-10 mx-10">
+        <div class="text-center max-w-2xl md:mb-10 mx-10">
           <h1
             class="md:text-5xl text-2xl leading-tight md:leading-tight font-bold text-white"
           >
@@ -64,3 +69,28 @@ import "./style.css";
     </div>
   </div>
 </section>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    ".fasal-video-wrapper",
+    {
+      transformOrigin: "center",
+      scale: 0.7,
+    },
+    {
+      duration: 1,
+      scale: 1,
+      scrollTrigger: {
+        trigger: ".fasal-video-wrapper",
+        start: "-=60% top",
+        end: "bottom bottom",
+        scrub: 1,
+        // toggleActions: "restart pause reverse reset",
+      },
+    }
+  );
+</script>

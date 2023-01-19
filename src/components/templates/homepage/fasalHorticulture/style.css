@@ -1,0 +1,13 @@
+.show-modal-screen {
+  display: block !important;
+}
+.hide-modal-screen {
+  display: none !important;
+}
+
+.fasal-horticulture {
+  background: url('/globals/grid-illustration.svg');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 25%;
+}

@@ -1,6 +1,6 @@
 ---
 import Header from "@molecules/header/index.astro";
-// import Footer from "@modules/footer";
+import Footer from "@molecules/footer/index.astro";
 
 export interface Props {
   title: string;
@@ -52,7 +52,7 @@ const { title, desc, ogImage = "", lang = "en" } = Astro.props;
     <main>
       <slot />
     </main>
-    <!-- <Footer /> -->
+    <Footer />
   </body>
 
   <script>

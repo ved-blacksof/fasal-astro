@@ -1,0 +1,144 @@
+---
+import HeadAtom from "@atoms/headAtom/index.astro";
+import SliderCards from "@atoms/sliderCards/index.astro";
+import "./style.css";
+
+const FasalImpactData = [
+  {
+    title_1: "Advanced ",
+    title_2: "irrigation alerts system",
+    stats: "11 bn",
+    des: " litres of water saved",
+  },
+  {
+    title_1: "Mirco-climatic ",
+    title_2: "forecast",
+    stats: "Up to 40%",
+    des: " increase in yield",
+  },
+  {
+    title_1: "Pest and disease ",
+    title_2: "forewarnings and advisory",
+    stats: "Up to 60%",
+    des: "cut in crop health inputs",
+  },
+  {
+    title_1: "60,000+ acres ",
+    title_2: "of farms’ database",
+    // stats: "60+ acres",
+    // des: "asdadasd adasdas s da das das",
+  },
+  {
+    title_1: "Indian farmers",
+    // title_2: "asdasd adasd",
+    stats: "2,000+",
+    // des: "asdadasd adasdas s da das das",
+  },
+];
+---
+
+<section class="blade-padding min-h-[40rem] relative">
+  <div class="contain">
+    <HeadAtom
+      classes="max-w-2xl pr-10"
+      label="FASAL IMPACT"
+      title_1="The  "
+      title_2=" Fasal "
+      title_3="  impact"
+      des="Tackling the challenges plaguing the Indian agri value chain one step at a time."
+    />
+  </div>
+  <div class="mt-24">
+    <div class="flex gap-4 justify-end contain static">
+      <button
+        class="swiper-button-prev static p-4 rotate-180 bg-green rounded-full h-16 w-16 text-white hover:bg-black transition"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="29.568"
+          height="11.955"
+          viewBox="0 0 29.568 11.955"
+        >
+          <path
+            id="Icon_open-arrow-right"
+            data-name="Icon open-arrow-right"
+            d="M5.394,0V5.11H-17V6.829H5.394v5.127l7.173-6.049Z"
+            transform="translate(17)"
+            fill="#fff"></path>
+        </svg>
+      </button>
+      <button
+        class="swiper-button-next static p-4 bg-black rounded-full h-16 w-16 text-white hover:bg-green transition"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="29.568"
+          height="11.955"
+          viewBox="0 0 29.568 11.955"
+        >
+          <path
+            id="Icon_open-arrow-right"
+            data-name="Icon open-arrow-right"
+            d="M5.394,0V5.11H-17V6.829H5.394v5.127l7.173-6.049Z"
+            transform="translate(17)"
+            fill="#fff"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="flex md:pl-[8%] pl-[4%] mt-10 swiper-container overflow-hidden">
+      <div class="swiper-wrapper">
+        {
+          FasalImpactData.map((item, ind) => {
+            const { title_1, title_2, des, stats } = item;
+            return (
+              <div class="swiper-slide">
+                <SliderCards
+                  light={ind % 2 === 0 ? true : false}
+                  title_1={title_1}
+                  title_2={title_2}
+                  des={des}
+                  stats={stats}
+                />
+              </div>
+            );
+          })
+        }
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Swiper, { Navigation, Autoplay, Pagination, Mousewheel } from "swiper";
+
+  // import "swiper/css";
+  // import "swiper/css/navigation";
+
+  var swiper = new Swiper(".swiper-container", {
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: true,
+    modules: [Navigation, Pagination, Autoplay, Mousewheel],
+    slidesPerView: 1,
+    speed: 700,
+    grabCursor: true,
+    freeMode: true,
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+      480: {
+        slidesPerView: 3,
+      },
+      640: {
+        slidesPerView: 3,
+      },
+    },
+  });
+</script>
