@@ -23,8 +23,8 @@ const FasalImpactData = [
     des: "cut in crop health inputs",
   },
   {
-    title_1: "60,000+ acres ",
-    title_2: "of farms’ database",
+    title_1: "60,000+  ",
+    title_2: "acres of farms’ database",
     // stats: "60+ acres",
     // des: "asdadasd adasdas s da das das",
   },
@@ -85,7 +85,9 @@ const FasalImpactData = [
         </svg>
       </button>
     </div>
-    <div class="flex md:pl-[8%] pl-[4%] mt-10 swiper-container overflow-hidden">
+    <div
+      class="flex md:pl-[8%] pl-[4%] pr-[2%] mt-10 swiper-container overflow-hidden"
+    >
       <div class="swiper-wrapper">
         {
           FasalImpactData.map((item, ind) => {
@@ -112,9 +114,6 @@ const FasalImpactData = [
 <script>
   import Swiper, { Navigation, Autoplay, Pagination, Mousewheel } from "swiper";
 
-  // import "swiper/css";
-  // import "swiper/css/navigation";
-
   var swiper = new Swiper(".swiper-container", {
     pagination: {
       el: ".swiper-pagination",
@@ -138,6 +137,9 @@ const FasalImpactData = [
       },
       640: {
         slidesPerView: 3,
+      },
+      1560: {
+        slidesPerView: 3.5,
       },
     },
   });

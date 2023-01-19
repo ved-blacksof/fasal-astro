@@ -1,14 +1,17 @@
 ---
+import "./style.css";
 const { type, classes, label, text, id } = Astro.props;
 ---
 
 <button
   id={id}
   type={type}
-  class={`${classes} rounded flex gap-3 items-center justify-between font-hellix border text-white h5`}
+  class={`${classes} buttons rounded flex gap-3  items-center justify-between font-hellix border text-white h5`}
   aria-label={label}
+  data-back={text}
+  data-front={text}
 >
-  <span class="h6">{text}</span>
+  <!-- <span class="h6">{text}</span> -->
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="29.568"

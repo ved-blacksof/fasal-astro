@@ -1,5 +1,6 @@
 ---
 import HeadAtom from "@atoms/headAtom/index.astro";
+import Map from "./map.astro";
 import "./style.css";
 ---
 
@@ -11,14 +12,16 @@ import "./style.css";
       title_2="precision horticulture"
       title_3=" on India’s map."
       des="Fasal is pioneering the precision horticulture movement. One that is backed by solid data analytics and artificial intelligence to strengthen the farm-to-cart network inside out."
-      classes="max-w-lg"
+      classes="max-w-xl"
     />
-    <div class="w-full md:pl-[20%] md:-mt-32">
+    <div class="w-full md:pl-[20%] md:-mt-[14%]">
       <img
         class="w-full h-full"
-        src="/home/map.png"
+        src="/home/map.svg"
         alt="map showing the locations on the indian map"
       />
+
+      <!-- <Map /> -->
     </div>
   </div>
 </section>

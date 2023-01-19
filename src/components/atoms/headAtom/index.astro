@@ -6,19 +6,23 @@ const { label, title_1, title_2, title_3, des, theme, classes } = Astro.props;
   {
     theme === "light" ? (
       <div>
-        <h3 class="h1 font-bold text-white mt-2 leading-tight md:leading-none">
+        <h3 class="h1 font-bold text-white mt-2 md:leading-tight leading-none">
           {title_1} <span class="text-yellow">{title_2}</span>
           {title_3}
         </h3>
-        <h3 class="h5 text-white leading-snug md:mt-6 mt-4">{des}</h3>
+        <h3 class="h5 text-white leading-snug md:mt-6 mt-4 md:pr-[15%]">
+          {des}
+        </h3>
       </div>
     ) : (
       <div>
-        <h3 class="h1 font-bold text-black mt-2 leading-tight md:leading-none">
+        <h3 class="h1 font-bold text-black mt-2 md:leading-tight leading-none">
           {title_1} <span class="text-green">{title_2}</span>
           {title_3}
         </h3>
-        <h3 class="h5 text-black leading-snug md:mt-6 mt-4">{des}</h3>
+        <h3 class="h5 text-black leading-snug md:mt-6 mt-4 md:pr-[15%]">
+          {des}
+        </h3>
       </div>
     )
   }
