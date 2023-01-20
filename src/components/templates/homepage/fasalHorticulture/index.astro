@@ -14,14 +14,39 @@ import "./style.css";
       des="Fasal is pioneering the precision horticulture movement. One that is backed by solid data analytics and artificial intelligence to strengthen the farm-to-cart network inside out."
       classes="max-w-xl"
     />
-    <div class="w-full md:pl-[20%] md:-mt-[14%]">
+    <!-- <div class="w-full md:pl-[20%] md:-mt-[14%] relative d"> -->
+    <div class="ml-[20%] w-[80%] relative md:-mt-[14%]">
       <img
         class="w-full h-full"
-        src="/home/map.svg"
+        src="/home/map_outline.png"
         alt="map showing the locations on the indian map"
       />
-
+      <img
+        class="w-full h-full absolute top-0 right-0 map-locations"
+        src="/home/map_locations.png"
+        alt="map showing the locations on the indian map"
+      />
       <!-- <Map /> -->
     </div>
   </div>
 </section>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".map-locations",
+      start: "-=20% top",
+      end: "bottom",
+    },
+  });
+
+  tl.fromTo(
+    ".map-locations",
+    { opacity: 0, y: -40 },
+    { opacity: 1, duration: 1.5, y: 0 }
+  );
+</script>

@@ -31,6 +31,18 @@
 
 .content-panel {
   position: absolute;
+  padding-top: 10px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+@media (max-width: 1080px) {
+  .content-panel {
+    position: relative;
+  }
 }
 
 .fasal-circular-svg {
@@ -43,11 +55,11 @@
   position: absolute;
 }
 
-.connect {
+.fresh {
   top: 39%;
   left: 0;
 }
-.fresh {
+.connect {
   top: 5%;
   right: 20%;
 }

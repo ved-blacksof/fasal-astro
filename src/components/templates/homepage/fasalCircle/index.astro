@@ -1,132 +1,21 @@
 ---
-import Button from "@atoms/buttons/index.astro";
-import HeadAtom from "@atoms/headAtom/index.astro";
+import HeadTileAtom from "@atoms/headTileAtom/index.astro";
+import MobileView from "./mobileView.astro";
+import DesktopView from "./desktopView.astro";
 import Circle from "./circle.astro";
 import "./style.css";
 ---
 
-<div
-  class="fasal-circular-wrapper md:h-screen gradient blade-padding relative overflow-hidden"
->
-  <div class="contain panel-wrapper">
-    <div id="content-panel1" class="content-panel">
-      <HeadAtom
-        label="1"
-        theme="light"
-        title_1="A "
-        title_2="Fresh"
-        title_3=" take on the procurement business"
-        des="No middlemen, no quality lapses, no pricing compromises. Fasal Fresh overhauls the repeating long-standing challenges of procurement professionals and farmers alike. From best-quality farm fresh fruits and vegetables to better-than-market rates, Fasal Fresh does a lot."
-        classes="max-w-2xl"
-      />
-      <ul class="list-triangle mt-4 ml-6">
-        <li class="h5 text-white">Demand-specific sourcing.</li>
-        <li class="h5 text-white">Demand-specific sourcing.</li>
-        <li class="h5 text-white">Demand-specific sourcing.</li>
-      </ul>
-      <div class="mt-8 flex flex-wrap gap-5">
-        <Button
-          type="button"
-          label=""
-          callback={() => {}}
-          text="FOR BUSINESSES"
-          key="for-business"
-          classes="p-3 px-4"
-        />
-        <Button
-          type="button"
-          label=""
-          callback={() => {}}
-          text="FOR FARMERS"
-          key="for-farmers"
-          classes="p-3 px-4"
-        />
-      </div>
-    </div>
-    <div id="content-panel2" class="content-panel">
-      <HeadAtom
-        label="-2"
-        theme="light"
-        title_1="A "
-        title_2="Fresh"
-        des="No middles, no pricing compromises. Fasal Fresh overhauls the repeating long-standing challenges of procurement professionals and farmers alike. From best-quality farm fresh fruits and vegetables to better-than-market rates, Fasal Fresh does a lot."
-        classes="max-w-2xl"
-      />
-      <ul class="list-triangle mt-4 ml-6">
-        <li class="h5 text-white">Demand-specific sourcing.</li>
-        <li class="h5 text-white">Demand-specific sourcing.</li>
-        <li class="h5 text-white">Demand-specific sourcing.</li>
-      </ul>
-      <div class="mt-8 flex flex-wrap gap-5">
-        <Button
-          type="button"
-          label=""
-          callback={() => {}}
-          text="FOR BUSINESSES"
-          key="for-business"
-          classes="p-3 px-4"
-        />
-        <Button
-          type="button"
-          label=""
-          callback={() => {}}
-          text="FOR FARMERS"
-          key="for-farmers"
-          classes="p-3 px-4"
-        />
-      </div>
-    </div>
-    <div id="content-panel3" class="content-panel">
-      <HeadAtom
-        label="---3"
-        theme="light"
-        title_1="A "
-        title_2="Fresh"
-        title_3="  business"
-        des="ricing compromises. Fasal Fresh overhauls the repeating long-standing challenges of procurement professionals and farmers alike. From best-quality farm fresh fruits and vegetables to better-than-market rates, Fasal Fresh does a lot."
-        classes="max-w-2xl"
-      />
-      <ul class="list-triangle mt-4 ml-6">
-        <li class="h5 text-white">Demand-specific sourcing.</li>
-        <li class="h5 text-white">Demand-specific sourcing.</li>
-        <li class="h5 text-white">Demand-specific sourcing.</li>
-      </ul>
-      <div class="mt-8 flex flex-wrap gap-5">
-        <Button
-          type="button"
-          label=""
-          callback={() => {}}
-          text="FOR BUSINESSES"
-          key="for-business"
-          classes="p-3 px-4"
-        />
-        <Button
-          type="button"
-          label=""
-          callback={() => {}}
-          text="FOR FARMERS"
-          key="for-farmers"
-          classes="p-3 px-4"
-        />
-      </div>
-    </div>
+<section>
+  <div class="md:block hidden">
+    <DesktopView />
   </div>
-
-  <div class="h-full md:block hidden w-[40%] absolute top-0 right-0">
-    <div
-      class="absolute flex items-center w-[100%] top-0 bottom-0 -right-[50%]"
-    >
-      <div
-        class="w-full relative max-h-[48rem] pt-3 pr-[9%] fasal-circular-svg"
-      >
-        <!-- <img class="w-full " src="/home/fasal-circle.svg" /> -->
-        <Circle />
-      </div>
-    </div>
+  <div class="md:hidden block gradient">
+    <MobileView />
   </div>
-</div>
+</section>
 
-<script>
+<!-- <script>
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -144,22 +33,22 @@ import "./style.css";
   });
 
   tl.addLabel("first")
-    .to("#content-panel1", { opacity: 1, y: 0 }, "first")
+    .to("#content-panel1", { opacity: 1, y: 0, zIndex: 9 }, "first")
     .to(".fasal-circular-svg", { rotate: "0deg" }, "first")
 
     .addLabel("second")
     .to(["#connect", "#tech", "#fresh"], { rotate: "-120deg" }, "second")
     .to(".fasal-center-circle", { rotate: "-120deg" }, "second")
     .to(".fasal-circular-svg", { rotate: "120deg" }, "second")
-    .to("#content-panel1", { opacity: 0, y: -300 }, "second")
-    .to("#content-panel2", { opacity: 1, y: 0 }, "second")
+    .to("#content-panel1", { opacity: 0, y: -300, zIndex: 0 }, "second")
+    .to("#content-panel2", { opacity: 1, y: 0, zIndex: 9 }, "second")
 
     .addLabel("third")
     .to(["#connect", "#tech", "#fresh"], { rotate: "-245deg" }, "third")
-    .to("#content-panel2", { opacity: 0, y: -300 }, "third")
+    .to("#content-panel2", { opacity: 0, y: -300, zIndex: 0 }, "third")
     .to(".fasal-center-circle", { rotate: "-245deg" }, "third")
     .to(".fasal-circular-svg", { rotate: "245deg" }, "third")
-    .to("#content-panel3", { opacity: 1, y: 0 }, "third")
+    .to("#content-panel3", { opacity: 1, y: 0, zIndex: 9 }, "third")
     .addLabel("fourth")
     .to(".fasal-circular-svg", { rotate: "245deg" }, "fourth");
-</script>
+</script> -->

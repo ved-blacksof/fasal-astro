@@ -1,0 +1,81 @@
+---
+import HeadTileAtom from "@atoms/headTileAtom/index.astro";
+---
+
+<div class="contain relative py-20">
+  <div class="swiper-slide">
+    <HeadTileAtom
+      label="1"
+      theme="light"
+      title_1="A "
+      title_2="Fresh"
+      title_3=" take on the procurement business"
+      des="No middlemen, no quality lapses, no pricing compromises. Fasal Fresh overhauls the repeating long-standing challenges of procurement professionals and farmers alike. From best-quality farm fresh fruits and vegetables to better-than-market rates, Fasal Fresh does a lot."
+      li1="Demand-specific sourcing."
+      li2="Regular availability of sorted, graded, and packed produce."
+      li3="Advanced stock planning."
+      classes="py-14"
+    />
+  </div>
+  <div class="swiper-slide">
+    <HeadTileAtom
+      label="-2"
+      theme="light"
+      title_1="A "
+      title_2="tech-driven"
+      title_3="take on horticulture farming"
+      des="No guesswork, no late measures, no hefty losses. The outcome? Increased yields with minimised farming inputs for farmers. Fasal Tech brings AI and data-driven precision to horticulture farming. It provides highly reliable horticulture advisory on smartphones in major Indian languages."
+      li1="Advance irrigation alerts"
+      li2="Pest and disease forewarnings and advisory"
+      li3="14-day hyperlocal weather forecast"
+      classes="py-14"
+    />
+  </div>
+  <div class="swiper-slide">
+    <HeadTileAtom
+      label="---3"
+      theme="light"
+      title_1="Lorem "
+      title_2="ipsum"
+      title_3="Connect"
+      des=" Ricing compromises. Fasal Fresh overhauls the repeating long-standing challenges of procurement professionals and farmers alike. From best-quality farm fresh fruits and vegetables to better-than-market rates, Fasal Fresh does a lot."
+      li1="Advance irrigation alerts"
+      li2="Pest and disease forewarnings and advisory"
+      li3="14-day hyperlocal weather forecast"
+      classes="py-14"
+    />
+  </div>
+</div>
+
+<script>
+  import { Swiper } from "swiper";
+  // Swiper Configuration
+  var swiper = new Swiper(".swiper-container-mob", {
+    slidesPerView: 1.5,
+    spaceBetween: 10,
+    centeredSlides: true,
+    freeMode: true,
+    grabCursor: true,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      500: {
+        slidesPerView: 1,
+      },
+      700: {
+        slidesPerView: 1.5,
+      },
+    },
+  });
+</script>

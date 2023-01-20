@@ -5,7 +5,7 @@ import InfiniteCarousel from "./infiniteCarousel.astro";
 import "./style.css";
 ---
 
-<section class="h-screen min-h-[40rem] relative">
+<section class="h-screen min-h-[45rem] relative">
   <video
     class="h-full min-h-[40rem] w-full object-cover absolute -z-10"
     src="/video/hero-section-intro.mp4"
@@ -13,7 +13,7 @@ import "./style.css";
     muted
     loop></video>
   <div
-    class="hero-section black-gradient h-screen min-h-[40rem] flex flex-col justify-center items-center"
+    class="hero-section black-gradient h-screen min-h-[45rem] flex flex-col justify-center items-center"
   >
     <div class="flex justify-center items-center contain">
       <div class="flex-1">
@@ -29,14 +29,19 @@ import "./style.css";
         <h5 class="h5 text-white opacity-90 mt-4">
           We help India grow more, grow better fruits and vegetables.
         </h5>
-        <div class="flex gap-6 mt-8">
+        <div class="flex md:gap-6 gap-2 mt-8">
           <Button
-            text="Lets connect"
-            label="lets connect"
             type="button"
-            classes="px-5 py-2"
+            label="LET'S CONNECT"
+            callback={() => {}}
+            text="LET'S CONNECT"
+            key="lets-connect"
+            classes="md:p-3 p-1 px-4"
           />
-          <img class="h-full" src="/icons/certified-partners-icons.svg" />
+          <img
+            class="md:h-full h-10"
+            src="/icons/certified-partners-icons.svg"
+          />
         </div>
       </div>
       <div class="flex-1 md:block hidden">
@@ -44,7 +49,7 @@ import "./style.css";
       </div>
     </div>
     <div class="contain mt-24 absolute bottom-8 left-0 right-0">
-      <h5 class="text-white">
+      <h5 class="text-white text-[12px]">
         Trusted by <span class="text-yellow font-medium">100</span> of progressive
         companies
       </h5>

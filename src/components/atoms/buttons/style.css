@@ -17,11 +17,12 @@
   content: attr(data-back);
   transform: translateY(100%) rotateX(0deg);
   padding-right: 42px;
-  background-color: #00613C;
+  background: #00613c;
   z-index: 0;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 3px;
 }
 
 .buttons:hover::after {
@@ -30,20 +31,21 @@
 }
 
 .buttons::before {
+  padding: 10px 0;
+  border-radius: 4px;
   top: 0;
   left: 0;
   opacity: 1;
-  height: 100%;
   color: #fff;
   display: block;
   transition: 0.5s;
   position: relative;
   content: attr(data-front);
-  padding-bottom: 5px;
   transform: translateY(0%) rotateX(0);
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
+  line-height: 8px;
 }
 .buttons:hover::before {
   opacity: 1;

@@ -15,13 +15,13 @@ body {
 
 @layer utilities {
   .contain {
-    @apply md:w-[84%] w-[95%] mx-auto;
+    @apply md:w-[84%] w-[90%] mx-auto;
   }
   .d {
     @apply border-2 border-green;
   }
   .h1 {
-    @apply text-[34px] lg:text-[38px] xl:text-[48px] 2xl:text-[58px] ;
+    @apply text-[34px] lg:text-[38px] xl:text-[48px] 2xl:text-[58px];
   }
   .h2 {
     @apply text-3xl lg:text-3xl xl:text-[42px]  2xl:text-[48px];
@@ -43,7 +43,7 @@ body {
       0%;
   }
   .blade-padding {
-    @apply py-20 lg:py-[120px] xl:py-[180px];
+    @apply py-8 lg:py-[120px] xl:py-[180px];
   }
   .link {
     @apply text-white hover:text-yellow transition-all duration-200;

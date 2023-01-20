@@ -1,134 +1,66 @@
 ---
 import "./style.css";
+
+// const { data } = Astro.props;
+
+const data = [
+  {
+    src: "/icons/partners-logo.png",
+  },
+  {
+    src: "/icons/partners-logo.png",
+  },
+  {
+    src: "/icons/partners-logo.png",
+  },
+  {
+    src: "/icons/partners-logo.png",
+  },
+  {
+    src: "/icons/partners-logo.png",
+  },
+  {
+    src: "/icons/partners-logo.png",
+  },
+  {
+    src: "/icons/partners-logo.png",
+  },
+  {
+    src: "/icons/partners-logo.png",
+  },
+  {
+    src: "/icons/partners-logo.png",
+  },
+  {
+    src: "/icons/partners-logo.png",
+  },
+  {
+    src: "/icons/partners-logo.png",
+  },
+  {
+    src: "/icons/partners-logo.png",
+  },
+  {
+    src: "/icons/partners-logo.png",
+  },
+  {
+    src: "/icons/partners-logo.png",
+  },
+];
 ---
 
 <div class="slider overflow-hidden">
   <div class="slide-track relative">
-    <div class="slider overflow-hidden">
-      <div class="slide-track flex relative">
-        <div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div><div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div>
-        <div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
-          <img
-            class="h-full w-full object-contain"
-            src="/icons/partners-logo.png"
-            alt=""
-          />
-        </div>
-      </div>
-    </div>
+    {
+      data.map((item) => {
+        const { src } = item;
+
+        return (
+          <div class="slide h-10 opacity-30 hover:opacity-100 duration-300">
+            <img class="h-full w-full object-contain" src={src} alt="" />
+          </div>
+        );
+      })
+    }
   </div>
 </div>
